@@ -1,0 +1,49 @@
+{
+  "name": "bubbleviz.git",
+  "version": "0.0.1",
+  "description": "An extension to track your search result's personalisation by Google",
+  "main": "main.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nataliejohnson/bubbleviz.git"
+  },
+  "keywords": [
+    "chrome-extension",
+    "extension"
+  ],
+  "author": "Natalie Johnson, Brice Fernandes",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nataliejohnson/bubbleviz/issues"
+  },
+  "homepage": "https://github.com/nataliejohnson/bubbleviz#readme",
+  "dependencies": {
+    "@ryancavanaugh/jqrangeslider": "^4.2.14-alpha",
+    "d3": "^3.5.17",
+    "d3-tip": "^0.6.7",
+    "d4": "^0.8.15",
+    "gulp": "^3.9.1",
+    "gulp-cli": "^1.2.1",
+    "handlebars": "^4.0.5",
+    "hasher": "^1.2.0",
+    "isotope-layout": "^3.0.0",
+    "isotope-packery": "^2.0.0",
+    "jquery": "^2.2.4",
+    "jquery-ui": "^1.10.5",
+    "lodash": "^4.13.1",
+    "masonry-layout": "^4.1.0",
+    "modernizr": "^3.3.1",
+    "signals": "^1.0.0",
+    "uuid": "^2.0.2",
+    "xml-writer": "^1.6.0"
+  },
+  "devDependencies": {
+    "del": "^2.2.1",
+    "grunt": "^1.0.1",
+    "gulp-livereload": "^3.8.1",
+    "gulp-sass": "^2.3.2"
+  }
+}

@@ -1,0 +1,694 @@
+/***********************************************************************
+*
+*  Liquid Slider
+*  Kevin Batdorf
+*
+*  http://liquidslider.kevinbatdorf.com
+*
+*  GPL license 
+*
+************************************************************************/
+/******************************************************
+* No JavaScript
+* Use this to apply styles when Javascript is disabled,
+* and be sure to include the ".no-js" class in your html 
+* markup.
+*******************************************************/
+/******************************************************
+* Preloader
+* Use this to apply styles when Javascript is disabled,
+* and be sure to include the ".no-js" class in your html 
+* markup.
+*******************************************************/
+.ls-wrapper .ls-preloader {
+  background: url(../img/loading.gif) #f2f2f2 no-repeat center 75px;
+  opacity: .90;
+  /* Do not edit below this line */
+  width: 100%;
+  height: 200%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/******************************************************************
+* Base Styles 
+* The styles here will apply to everything. I recommend you keep
+* the styles in here specific to mobile defices, then use
+* the media queries at the bottom to define further styles for larger
+* screen-sizes. Think Mobile First. But be cautious of how
+* your site will look in older IE browsers.
+*
+* Additional media queries are at the bottom of this document
+******************************************************************/
+.ls-wrapper {
+  margin: 0 auto;
+  /* Do not edit below this line */
+  clear: both;
+  overflow: auto;
+  position: relative;
+}
+
+/******************************************************
+* Main Container
+* This is the main container (minus the navigation).
+* Be sure to match the width with the .panel class, 
+* or it won't work properly. Also, width only applies
+* if you are not using the responsive setting.
+*
+* The responsive slider will interpret the width as the
+* max width instead
+*******************************************************/
+.ls-wrapper .liquid-slider {
+  background: #f2f2f2;
+  width: 1030px;
+  /* Do not edit below this line */
+  float: left;
+  overflow: hidden;
+  position: relative;
+}
+
+.ls-wrapper .panel-container {
+  /* Do not edit below this line */
+  position: relative;
+}
+
+.ls-wrapper .liquid-slider .panel-container .fadeClass {
+  /* Do not edit below this line */
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+/******************************************************
+* Panels
+* This is for the panels. If you are using the 
+* responsive setting, this will act as the max-width
+* for the entire slider.
+*******************************************************/
+.ls-wrapper .liquid-slider .panel {
+  width: 1030px;
+  /* Do not edit below this line */
+  display: block;
+  float: left;
+}
+
+/******************************************************
+* These provide a base starting point for images and
+* video. However, you will have to add more rules
+* based on the content you use. Use the @media queries 
+* at the bottom of this file.
+*******************************************************/
+.ls-wrapper .liquid-slider .panel img {
+  /*
+  width:100%;
+  height:auto;  
+  margin:0 5px;
+  */
+}
+
+.ls-wrapper .liquid-slider .panel video {
+  /*
+  width:100%;  
+  height:auto;
+  */
+}
+
+/******************************************************
+* This is mainly used to adjust the padding inside each 
+* panel. If you are using the responsive setting, you
+* need to use the settings below as this will not apply.
+*******************************************************/
+.ls-wrapper .liquid-slider .panel-wrapper {
+  padding: 20px;
+  /* Do not edit below this line */
+  position: relative;
+}
+
+/*****************************************************
+* This will adjust styles for all navigation tabs
+* less of course the select box used for mobile 
+* navigation. The .current styles will apply only to 
+* the current tab.
+*
+* You may use this section to create navigation for
+* mobile devices if you set mobileNavigation: false
+* Be sure to edit media queries for larger devices below
+* I have included an example below in comments.
+*
+* .currentCrossLink refers to external crosslinking.
+*******************************************************/
+.ls-wrapper .liquid-nav a {
+  background: #d8d8d8;
+  color: #333333;
+  margin-right: 1px;
+  padding: 3px 6px;
+}
+
+.ls-wrapper .liquid-nav a:hover {
+  background: #f2f2f2;
+  color: #333333;
+  text-shadow: none;
+}
+
+.ls-wrapper .liquid-nav .current {
+  background: #f2f2f2;
+}
+
+.currentCrossLink {
+  font-weight: bold;
+}
+
+.ls-wrapper .liquid-nav ul {
+  padding: 0;
+  /* Do not edit below this line */
+  clear: both;
+  display: block;
+  margin: auto;
+  overflow: hidden;
+}
+
+.ls-wrapper .liquid-nav ul li {
+  /* Do not edit below this line */
+  display: inline;
+}
+
+.ls-wrapper .liquid-nav ul li a {
+  /* Do not edit below this line */
+  display: block;
+  float: left;
+  text-decoration: none;
+}
+
+/*****************************************************
+* Mobile Menu
+* This will adjust styles for selectbox styles. I have
+* included a simple example to create a custom select
+* box.
+*******************************************************/
+.ls-wrapper .liquid-nav {
+  overflow: hidden;
+  clear: both;
+}
+
+.ls-wrapper .ls-select-box {
+  /* Delete these if you want the standard select box.
+     Also delete the rules below */
+  width: 100%;
+  height: 35px;
+  overflow: hidden;
+  background: url(../img/menu.png) no-repeat right #dddddd;
+}
+
+.ls-wrapper .ls-select-box select {
+  /* If you want the standard select box, use 
+  width:100%
+  And delete the rest of the styling here */
+  width: 150%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  padding: 5px;
+  font-size: 110%;
+  border: 1px solid #bbb;
+  height: 35px;
+  cursor: pointer;
+}
+
+/******************************************************
+* Arrows
+* This section refers to both the non-graphical and 
+* graphical navigation arrows. 
+*
+* Some settings will be overwritten when using the 
+* responsive setting.
+*******************************************************/
+.ls-wrapper .liquid-nav-left, .ls-wrapper .liquid-nav-right {
+  /* Do not edit below this line */
+  float: left;
+}
+
+.ls-wrapper .liquid-nav-left a, .ls-wrapper .liquid-nav-right a {
+  /* non-graphical arrows */
+  background: #000;
+  color: #fff;
+  padding: 5px;
+  width: 100px;
+  /* Do not edit below this line */
+  display: block;
+  text-align: center;
+  text-decoration: none;
+}
+
+.ls-wrapper .liquid-nav-left-arrow, .ls-wrapper .liquid-nav-right-arrow {
+  cursor: pointer;
+  /* Do not edit below this line */
+  float: left;
+}
+
+.ls-wrapper .liquid-nav-left-arrow a, .ls-wrapper .liquid-nav-right-arrow a {
+  /* Do not edit below this line */
+  display: block;
+}
+
+.ls-wrapper .liquid-nav-left, .ls-wrapper .liquid-nav-left-arrow {
+  /* Do not edit below this line */
+  clear: both;
+}
+
+.ls-wrapper .liquid-nav-right-arrow {
+  width: 25px;
+  height: 25px;
+  background: url(../img/arrow.png) no-repeat top right;
+  margin-top: 50px;
+  margin-right: 5px;
+  /* Do not edit below this line */
+  position: relative;
+}
+
+.ls-wrapper .liquid-nav-left-arrow {
+  width: 25px;
+  height: 25px;
+  background: url(../img/arrow.png) no-repeat top left;
+  margin-top: 50px;
+  margin-left: 5px;
+  /* Do not edit below this line */
+  position: relative;
+}
+
+.ls-wrapper .liquid-nav-left-arrow:hover {
+  /* Left graphical arrows hover */
+  background: url(../img/arrow.png) no-repeat bottom left;
+}
+
+.ls-wrapper .liquid-nav-left-arrow:active {
+  /* Left graphical arrows click */
+}
+
+.ls-wrapper .liquid-nav-right-arrow:hover {
+  /* Right graphical arrows hover */
+  background: url(../img/arrow.png) no-repeat bottom right;
+}
+
+.ls-wrapper .liquid-nav-right-arrow:active {
+  /* Right graphical arrows click */
+}
+
+.arrows .liquid-slider {
+  /* Margin between slider and arrows */
+  margin: 0 10px;
+}
+
+/******************************************************
+* Responsive Styles
+* Here are the main responsive styles. This mostly 
+* covers the arrows, and most of the settings can be
+* applied above.
+*******************************************************/
+.liquid-responsive .liquid-slider {
+  /* Do not edit below this line */
+  width: 100%;
+  margin: 0;
+}
+
+.liquid-responsive .liquid-slider .panel .panel-wrapper {
+  padding: 10px;
+}
+
+.liquid-responsive .liquid-nav-left {
+  /* Left non-graphical arrows */
+  /* Do not edit below this line */
+  position: absolute;
+  left: 0;
+  z-index: 1;
+}
+
+.liquid-responsive .liquid-nav-left a {
+  /* Left non-graphical arrows */
+  background: #9A9A9A;
+  width: 80px;
+}
+
+.liquid-responsive .liquid-nav-left a:hover {
+  /* Left non-graphical hover */
+  background: #747474;
+}
+
+.liquid-responsive .liquid-nav-right {
+  /* Right non-graphical arrows */
+  /* Do not edit below this line */
+  position: absolute;
+  right: 0;
+  z-index: 1;
+}
+
+.liquid-responsive .liquid-nav-right a {
+  /* Right non-graphical arrows */
+  background: #9A9A9A;
+  width: 80px;
+}
+
+.liquid-responsive .liquid-nav-right a:hover {
+  /* Right non-graphical arrows hover */
+  background: #747474;
+}
+
+.liquid-responsive .liquid-nav-left-arrow {
+  /* Do not edit below this line */
+  position: absolute;
+  left: 0;
+  z-index: 1;
+}
+
+.liquid-responsive .liquid-nav-right-arrow {
+  /* Do not edit below this line */
+  position: absolute;
+  right: 0;
+  z-index: 1;
+}
+
+/******************************************************************
+* Larger Mobile Devices
+* This is for devices like the Galaxy Note or something that's 
+* larger than an iPhone but smaller than a tablet. 
+******************************************************************/
+@media only screen and (min-width: 481px) {
+  .ls-wrapper .liquid-slider .panel img {
+    /* Example */
+    /*
+    width:24%;
+    margin:2px;
+    */
+  }
+}
+/******************************************************************
+* Tablet & Smaller Laptops
+* This will include tablets and some netbooks.
+******************************************************************/
+@media only screen and (min-width: 768px) {
+  .ls-wrapper .liquid-slider .panel img {
+    /* Example */
+    /*
+    width:24%;
+    */
+  }
+
+  .liquid-responsive .liquid-slider .panel .panel-wrapper {
+    padding: 20px 35px;
+  }
+}
+/******************************************************************
+* DESKTOP 
+* This is the average viewing window. So Desktops, Laptops, and 
+* in general anyone not viewing on a mobile device. Here's where
+* you can add resource intensive styles.
+******************************************************************/
+/******************************************************************
+* LARGE VIEWING SIZE 
+* This is for the larger monitors and possibly full screen viewers.
+******************************************************************/
+/******************************************************************
+* RETINA (2x RESOLUTION DEVICES)
+* This applies to the retina iPhone (4s) and iPad (2,3) along with 
+* other displays with a 2x resolution. You can also create a media
+* query for retina AND a certain size if you want. Go Nuts.
+******************************************************************/
+/* Variables */
+/* Layout */
+/* Typography */
+/* Media Queries */
+body {
+  background: #87e0fd;
+  font-size: 18px;
+}
+
+.header {
+  background: #0ac0fb;
+  display: inline-block;
+  width: 100%;
+}
+
+h1 {
+  font-size: 200%;
+  margin: 15px 0;
+}
+
+.container {
+  max-width: 1030px;
+  width: 100%;
+  margin: 0 auto;
+  background: #0ac0fb;
+}
+
+.navigation .menu-toggle {
+  display: block;
+  text-align: right;
+  padding: 0 10px;
+  cursor: pointer;
+}
+@media (min-width: 600px) {
+  .navigation .menu-toggle {
+    display: none;
+  }
+}
+.navigation .menu {
+  padding: 0;
+  margin: 0;
+  display: none;
+}
+@media (min-width: 600px) {
+  .navigation .menu {
+    display: block;
+  }
+}
+.navigation .menu .menu-item {
+  background: #0ac0fb;
+  display: block;
+  float: none;
+}
+.navigation .menu .menu-item a {
+  font-size: 120%;
+  padding: 15px;
+  display: block;
+  text-decoration: none;
+  border-bottom: 3px solid #0ac0fb;
+  text-align: center;
+  -webkit-transition: background 0.3s ease;
+  -moz-transition: background 0.3s ease;
+  -o-transition: background 0.3s ease;
+  transition: background 0.3s ease;
+  color: white;
+}
+.navigation .menu .menu-item a:hover {
+  background: #04afe7;
+  border-bottom: 3px solid #04afe7;
+}
+.navigation .menu .menu-item .right-btn {
+  font-size: 200%;
+  padding: 3px 20px 9px;
+}
+@media (min-width: 600px) {
+  .navigation .menu .menu-item {
+    float: left;
+  }
+}
+.navigation .menu .menu-item .currentCrossLink {
+  font-weight: normal;
+}
+@media (min-width: 600px) {
+  .navigation .menu .menu-item .currentCrossLink {
+    border-bottom: 3px solid;
+  }
+}
+@media (min-width: 600px) {
+  .navigation .menu .menu-item .currentCrossLink:hover {
+    border-bottom: 3px solid;
+  }
+}
+.navigation .open {
+  display: block;
+}
+
+.ls-wrapper {
+  overflow: hidden;
+}
+.ls-wrapper img {
+  max-width: 100%;
+  height: auto;
+}
+.ls-wrapper .liquid-slider {
+  width: 100%;
+  max-width: 1920px !important;
+  background: none;
+}
+.ls-wrapper .liquid-slider .panel {
+  width: 100%;
+}
+.ls-wrapper .liquid-slider .panel .panel-wrapper {
+  padding: 0;
+}
+@media (min-width: 600px) {
+  .ls-wrapper .liquid-slider .panel .panel-wrapper {
+    padding: 10px;
+  }
+}
+.ls-wrapper .liquid-slider .inner {
+  padding: 20px;
+}
+
+@media (min-width: 1000px) {
+  .main-content {
+    float: left;
+    width: 65%;
+    margin-right: 5%;
+  }
+}
+
+@media (min-width: 1000px) {
+  .sidebar {
+    width: 30%;
+    float: right;
+  }
+}
+
+.group:before,
+.group:after {
+  content: "";
+  display: table;
+}
+
+.group:after {
+  clear: both;
+}
+
+.group {
+  zoom: 1;
+  /* For IE 6/7 (trigger hasLayout) */
+}
+
+.ls-wrapper .ls-preloader {
+  background: #87e0fd;
+  padding: 200px 48%;
+  opacity: 1;
+}
+
+.blockG {
+  background-color: #0ac0fb;
+  border: 2px solid #0ac0fb;
+  float: left;
+  height: 57px;
+  margin-left: 4px;
+  width: 15px;
+  opacity: 0.1;
+  -moz-animation-name: bounceG;
+  -moz-animation-duration: 1.2s;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-direction: linear;
+  -moz-transform: scale(0.7);
+  -webkit-animation-name: bounceG;
+  -webkit-animation-duration: 1.2s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: linear;
+  -webkit-transform: scale(0.7);
+  -ms-animation-name: bounceG;
+  -ms-animation-duration: 1.2s;
+  -ms-animation-iteration-count: infinite;
+  -ms-animation-direction: linear;
+  -ms-transform: scale(0.7);
+  -o-animation-name: bounceG;
+  -o-animation-duration: 1.2s;
+  -o-animation-iteration-count: infinite;
+  -o-animation-direction: linear;
+  -o-transform: scale(0.7);
+  animation-name: bounceG;
+  animation-duration: 1.2s;
+  animation-iteration-count: infinite;
+  animation-direction: linear;
+  transform: scale(0.7);
+}
+
+#blockG_1 {
+  -moz-animation-delay: 0.36s;
+  -webkit-animation-delay: 0.36s;
+  -ms-animation-delay: 0.36s;
+  -o-animation-delay: 0.36s;
+  animation-delay: 0.36s;
+}
+
+#blockG_2 {
+  -moz-animation-delay: 0.48s;
+  -webkit-animation-delay: 0.48s;
+  -ms-animation-delay: 0.48s;
+  -o-animation-delay: 0.48s;
+  animation-delay: 0.48s;
+}
+
+#blockG_3 {
+  -moz-animation-delay: 0.6s;
+  -webkit-animation-delay: 0.6s;
+  -ms-animation-delay: 0.6s;
+  -o-animation-delay: 0.6s;
+  animation-delay: 0.6s;
+}
+
+@-moz-keyframes bounceG {
+  0% {
+    -moz-transform: scale(1.2);
+    opacity: 1;
+  }
+
+  100% {
+    -moz-transform: scale(0.7);
+    opacity: 0.1;
+  }
+}
+
+@-webkit-keyframes bounceG {
+  0% {
+    -webkit-transform: scale(1.2);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: scale(0.7);
+    opacity: 0.1;
+  }
+}
+
+@-ms-keyframes bounceG {
+  0% {
+    -ms-transform: scale(1.2);
+    opacity: 1;
+  }
+
+  100% {
+    -ms-transform: scale(0.7);
+    opacity: 0.1;
+  }
+}
+
+@-o-keyframes bounceG {
+  0% {
+    -o-transform: scale(1.2);
+    opacity: 1;
+  }
+
+  100% {
+    -o-transform: scale(0.7);
+    opacity: 0.1;
+  }
+}
+
+@keyframes bounceG {
+  0% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(0.7);
+    opacity: 0.1;
+  }
+}

@@ -3,3 +3,5 @@ __pycache__
 ENV
 *.un~
 ext/_locales
+node_modules/
+extension/

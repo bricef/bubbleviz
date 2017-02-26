@@ -1,0 +1,61 @@
+{
+  "name": "Persanalysed",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "Persanalysed is an analytic tool that quantifies your search behaviour.",
+  "homepage_url": "http://extensionizr.com",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "browser_action": {
+    "default_icon": {
+      "19": "icons/icon19.png"
+    }
+  },
+  "permissions": [
+    "http://bubbleviz.herokuapp.com/*",
+    "http://bubbleviz-carrot.herokuapp.com/*",
+    "storage",
+    "history",
+    "downloads"
+  ],
+  "default_locale": "en",
+  "background": {
+    "page": "src/bg/background.html",
+    "persistent": true
+  },
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "web_accessible_resources": ["src/inject/embed-script.js"],
+  "externally_connectable":{
+    "matches":[
+      "https://*.google.com/*",
+      "http://*.google.com/*",
+      "https://*.google.co.uk/*",
+      "http://*.google.co.uk/*",
+      "https://*.google.com.au/*",
+      "http://*.google.com.au/*"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.google.com/*",
+        "http://*.google.com/*",
+        "https://*.google.co.uk/*",
+        "http://*.google.co.uk/*",
+        "https://*.google.com.au/*",
+        "http://*.google.com.au/*"
+      ],
+      "css": [ "src/inject/inject.css"],
+      "js": [
+        "js/jquery/jquery.min.js",
+        "js/signals.min.js",
+        "js/hasher.min.js",
+        "src/common.js",
+        "src/inject/inject.js"
+      ]
+    }
+  ]
+}
